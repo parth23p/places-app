@@ -19,11 +19,14 @@
   
   .main-navigation__title {
     color: white;
+
   }
   
   .main-navigation__title a {
     text-decoration: none;
-    color: white;
+    color: #fbe7d3;
+    font-size:xx-large;
+    
   }
   
   .main-navigation__header-nav {

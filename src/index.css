@@ -1,16 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Capriola&display=swap');
 * {
   box-sizing: border-box;
+  font-family: 'Capriola', sans-serif;
+  font-weight: bolder;
+  letter-spacing: 2.3px;
+  
 }
 
 html {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Capriola', sans-serif;
+
 }
 
 body {
   margin: 0;
-  background: #4b4b4b;
+  background: #bed8cf;
 }
 
 .slide-in-left-enter {

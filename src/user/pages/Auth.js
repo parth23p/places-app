@@ -57,8 +57,7 @@ const Auth = () => {
 
             try {
                 const responseData = await sendRequest(
-
-                    process.env.REACT_APP_BACKEND_URL + '/users/login',
+                    'http://localhost:5000/api/users/login',
                     'POST',
                     JSON.stringify({
                         email: formState.inputs.email.value,
@@ -83,17 +82,13 @@ const Auth = () => {
                 formData.append('password', formState.inputs.password.value);
                 formData.append('image', formState.inputs.image.value);
                 const responseData = await sendRequest(
-                    process.env.REACT_APP_BACKEND_URL + '/users/signup',
+                    'http://localhost:5000/api/users/signup',
                     'POST',
-                    // JSON.stringify({
-                    //     name: formState.inputs.name.value,
-                    //     email: formState.inputs.email.value,
-                    //     password: formState.inputs.password.value
-                    // }),
-                    formData
+                    formData,
+
                     // form data automatically set right headers so don't needed to specify header explicityly
                     // {
-                    //     'Content-Type': 'multipart/form-data'
+                    //     'Content-Type': 'application/json'
                     // }
                 );
                 auth.login(responseData.userId, responseData.token);

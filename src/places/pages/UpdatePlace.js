@@ -11,35 +11,6 @@ import { VALIDATOR_MINLENGTH, VALIDATOR_REQUIRE } from '../../shared/util/valida
 import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner.js';
 import ErrorModal from '../../shared/components/UIElements/ErrorModal.js';
 
-
-// const PLACES = [
-//     {
-//         id: 'p1',
-//         title: 'Empire State Building',
-//         description: 'One of the most famous Sky scrappers in the world!',
-//         imageUrl: 'https://lh3.googleusercontent.com/p/AF1QipMCXR42PGjcM-sbkMk9c4UbrHnqfOC-D3_F2Pil=h400-no',
-//         address: '20 W 34th St, New York, NY 10001, United States',
-//         location: {
-//             lat: 40.7484402,
-//             lng: -73.9943977
-//         },
-//         creator: 'u1'
-//     },
-//     {
-//         id: 'p2',
-//         title: 'Empire State Building',
-//         description: 'One of the most famous Sky scrappers in the world!',
-//         imageUrl: 'https://lh5.googleusercontent.com/p/AF1QipPVXL2PBY-7KHWwR4SybsxS47ZpMCaYV19cMT0w=w408-h512-k-no',
-//         address: '20 W 34th St, New York, NY 10001, United States',
-//         location: {
-//             lat: 40.7484402,
-//             lng: -73.9943977
-
-//         },
-//         creator: 'u2'
-//     }
-// ]
-
 const UpdatePlace = () => {
     const { isLoading, error, sendRequest, clearError } = useHttpClient();
     // const [isLoading, setIsLoading] = useState(true);
@@ -63,7 +34,7 @@ const UpdatePlace = () => {
     useEffect(() => {
         const fetchPlace = async () => {
             try {
-                const responseData = await sendRequest(`${process.env.REACT_APP_BACKEND_URL}}/places/${placeId}`);
+                const responseData = await sendRequest(`http://localhost:5000/api/places/${placeId}`);
                 setLoadedPlace(responseData.place);
                 setFormData({
                     title: {
@@ -81,19 +52,12 @@ const UpdatePlace = () => {
         };
         fetchPlace();
     }, [sendRequest, placeId, setFormData]);
-    // useEffect(() => {
-    //     if (identifiedPlace) {
-
-    //     }
-
-    //     setIsLoading(false);
-    // }, [setFormData, identifiedPlace]);
     const placeUpdateSubmithandler = async event => {
         event.preventDefault();
         // console.log(formState.inputs);
         try {
             const responseData = await sendRequest(
-                `${process.env.REACT_APP_BACKEND_URL}/places/${placeId}`,
+                `http://localhost:5000/api/places/${placeId}`,
                 'PATCH',
                 JSON.stringify({
                     title: formState.inputs.title.value,

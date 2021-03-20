@@ -11,13 +11,16 @@
     height: 100%;
     text-decoration: none;
     padding: 1rem;
-    color: white;
-    background: #292929;
+    
+    background: #0cafa9;
   }
   
   .user-item a:hover,
   .user-item a:active {
-    background: #ffd900;
+    /* background: #a1c3d1;
+     */
+     background: #fbe7d3;
+    color:#0cafa9;
   }
   
   .user-item__content {
@@ -33,17 +36,23 @@
   .user-item__info h2 {
     font-size: 1.5rem;
     margin: 0 0 0.5rem 0;
-    font-weight: normal;
-    color: #ffd900;
+    font-weight: bolder;
+    font-style: normal;
+    color:#fbe7d3;
+    
   }
   
   .user-item:hover h2,
   .user-item:active h2,
   .user-item:hover h3,
   .user-item:active h3 {
-    color: #292929;
+    color:#0cafa9;
+    /* color: #a1c3d1; */
+    
   }
   
   .user-item__info h3 {
     margin: 0;
+    color:#fbe7d3;
+
   }
